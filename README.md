@@ -13,6 +13,13 @@ Key features include:
 - The game runs locally using the *turtle* graphics module, with simulations executed via Anaconda Prompt.
 - Test code evaluates the agent’s performance by using the trained Q-table model to assess progress and success.
 - Currently extending the project with a neural network implementation to further improve AI performance beyond traditional Q-Learning.
+- The game environment is visualized in real-time using **Turtle graphics**, with Pacman represented as a custom GIF sprite.
+- The state representation includes a local **3×3 perception grid**, simulating a limited field of view for the agent.
+- Features a custom **20×20 tile-based maze** with defined walkable paths and walls.
+- Uses Turtle-based visual representation for Pacman and static ghosts.
+- Provides **local spatial awareness** through a 3×3 surrounding tile observation.
+- Implements a **reward structure** that encourages exploration, discourages redundancy, and penalizes danger.
+- Compatible with **Deep Q-Network (DQN)** agents using discrete action spaces.
 
 ## Challenge Addressed
 
@@ -30,4 +37,3 @@ Learning in dynamic, uncertain environments with obstacles and rewards — train
 ---
 
 This project demonstrates how reinforcement learning methods can be applied to classic games, offering insights into AI decision-making in complex, changing environments.
-
