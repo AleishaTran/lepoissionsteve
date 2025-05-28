@@ -1,5 +1,5 @@
 import numpy as np
-from pacman_env import PacmanEnv
+from pacman_game import PacmanEnv
 import pickle
 
 env = PacmanEnv()

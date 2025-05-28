@@ -3,16 +3,22 @@ from random import choice
 import numpy as np
 from freegames import floor, vector
 import pickle
+from turtle import Turtle, Screen
 
 # Load Q-table
 with open("q_table.pkl", "rb") as f:
     Q = pickle.load(f)
-
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
+pacman_turtle = Turtle()
+screen = Screen()
+screen.register_shape("LPS2.gif")
+pacman_turtle.shape("LPS2.gif")
+pacman_turtle.penup()
+screen.register_shape("ghost1.gif")
 
 ghosts = [
     [vector(-180, 160), vector(5, 0)],
@@ -51,10 +57,11 @@ actions = {
     3: vector(0, -5),  # Down
 }
 
-def square(x, y):
+def square(x, y, color=""):
     path.up()
     path.goto(x, y)
     path.down()
+    path.fillcolor(color)
     path.begin_fill()
     for _ in range(4):
         path.forward(20)
@@ -76,8 +83,7 @@ def valid(point):
     return point.x % 20 == 0 or point.y % 20 == 0
 
 def world():
-    bgcolor('black')
-    path.color('blue')
+    path.color('white')
     for index in range(len(tiles)):
         tile = tiles[index]
         if tile > 0:
@@ -87,12 +93,13 @@ def world():
             if tile == 1:
                 path.up()
                 path.goto(x + 10, y + 10)
-                path.dot(2, 'white')
+                path.dot(6, 'white')
 
 def move():
     writer.undo()
     writer.write(state['score'])
     clear()
+    world()
 
     def get_surroundings_state(pacman):
         x = int((pacman.x + 200) / 20)
@@ -108,10 +115,10 @@ def move():
                     surroundings.append(0)
         return tuple(surroundings)
 
-
+    # Inside move():
     state_index = get_surroundings_state(pacman)
 
-    # 🧠Q-learning
+    # 🧠 Use Q-learning or random if unseen
     if state_index not in Q:
         print(f"Unknown state: {state_index}")
         action = np.random.choice(list(actions.keys()))
@@ -131,11 +138,13 @@ def move():
         state['score'] += 1
         x = (index % 20) * 20 - 200
         y = 180 - (index // 20) * 20
-        square(x, y)
+        square(x, y)  # Erase background behind pellet
+        path.up()
+        path.goto(x + 10, y + 10)
+        path.dot(6, 'brown')  # Draw brown dot
 
-    up()
-    goto(pacman.x + 10, pacman.y + 10)
-    dot(20, 'yellow')
+    pacman_turtle.goto(pacman.x + 10, pacman.y + 10)
+
 
     for point, course in ghosts:
         if valid(point + course):
@@ -145,7 +154,7 @@ def move():
             course.x, course.y = plan.x, plan.y
         up()
         goto(point.x + 10, point.y + 10)
-        dot(20, 'red')
+        dot(20, 'pink')
 
     update()
 
@@ -162,12 +171,21 @@ def change(x, y):
         aim.y = y
 
 setup(420, 420, 370, 0)
+screen = Screen()
+screen.bgpic("background.gif")
+screen.register_shape("LPS2.gif")
+
 hideturtle()
 tracer(False)
+
 writer.goto(160, 160)
 writer.color('white')
 writer.write(state['score'])
 
 world()
+pacman_turtle.shape("LPS2.gif")
+pacman_turtle.penup()
+pacman_turtle.goto(pacman.x + 10, pacman.y + 10)
+pacman_turtle.showturtle()
 move()
 done()
