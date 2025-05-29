@@ -40,3 +40,40 @@ This project demonstrates how reinforcement learning methods can be applied to c
 
 ## HOW TO RUN THE CODE 
 JUST RUN THE TRAIN.PY
+
+Python Dependencies
+Install these via pip:
+
+bash
+Copy
+Edit
+pip install numpy freegames
+numpy: For numerical operations like argmax.
+
+freegames: Provides helper functions like floor and vector.
+
+Standard Library Modules (No Installation Needed)
+These are part of Python's standard library:
+
+turtle
+
+pickle
+
+random
+
+Required Files and Resources
+Q-table file:
+
+You must have a file named q_table.pkl in the same directory. This is a pickle-serialized Q-table (a dictionary).
+
+Images:
+
+LPS2.gif — registered as the Pac-Man shape.
+
+ghost1.gif — registered for ghost shapes (though it looks unused; ghosts are drawn with dot(...)).
+
+background.gif — the background image for the turtle screen.
+
+Make sure these .gif files are in the same directory as your script, or update the path accordingly.
+
+
