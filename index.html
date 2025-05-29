@@ -2,19 +2,34 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="AI In Robotics Final Project: LePoisson Pacman.">
-  <meta name="keywords" content="Pacman, Agent, Artificial Intelligence, Train, Test">
+  <meta name="description" content="LePoisson Pac-Man - AI trained retro game model.">
+  <meta name="keywords" content="PacMan, Artificial Intelligence, Robotics, Retro Game, Programming">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LePoisson Pacman: Training a PacMan model through Artificial Intelligence</title>
+  <title>LePoisson PacMan</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/index.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
 <body>
 
@@ -28,11 +43,20 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="#">
+      <a class="navbar-item" href="https://keunhong.com">
         <span class="icon">
-            <i class="fas fa-home"></i>
+          <i class="fas fa-home"></i>
         </span>
       </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Research</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/AleishaTran/lepoissionsteve.git">
+            GitHub
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -42,36 +66,48 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">LePoisson Pacman: AI Trained Game Agent</h1>
+          <h1 class="title is-1 publication-title">LePossion PacMan</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Natanya, Aleisha, Katie<sup>1</sup>,</span>
-            <span class="author-block">Group 7 - University of Technology Sydney<sup>1</sup></span>
+            <span class="author-block">
+              <a href="">Katie Forster</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Aleisha Tran</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Natanya Lloyds</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Technology Sydney,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="./static/docs/report.pdf" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Report</span>
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://youtu.be/aBbJcrfMat8?si=RzmiEVCPOLTqnjIQ" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
+                  <span>Video</span>
                 </a>
               </span>
               <span class="link-block">
                 <a href="https://github.com/AleishaTran/lepoissionsteve.git" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
+                  <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="./static/videos/demo.mp4" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Demo</span>
                 </a>
               </span>
             </div>
@@ -83,15 +119,21 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        LePoisson PacMan project uses reinforcement learning techniques to enable an AI agent to perceive and navigate the game environment intelligently, learning optimal strategies through trial and error.
-      </h2>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/video1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/video2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -99,5 +141,8 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column
-
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>This project implements a simplified version of the classic Pacman game, designed as a custom Reinforcement Learning (RL) environment using Python and the Turtle graphics library. The main objective is to train an intelligent Pacman agent to navigate a maze, avoid static ghosts, and collect rewards by visiting and exploring the environment.</p>
+          <p>The Agent is modelled using a Deep Q-Learning Network (DQN) and interacts with a grid-based environment where each tile may be a wall or a path. The agent gains feedback fr
