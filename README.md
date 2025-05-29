@@ -1,6 +1,6 @@
 # Autonomous Pac-Man AI using Machine Learning
 
-This project transforms the classic Pac-Man game by applying machine learning methods to enhance the AI agent’s ability to avoid ghosts and efficiently collect pellets.
+This project transforms the classic Pac-Man game by applying machine learning methods to enhance the AI agent’s ability to avoid ghosts and efficiently collect pellets. file:///home/katie/LPS/lepoissionsteve/index.html 
 
 ## Project Summary
 
