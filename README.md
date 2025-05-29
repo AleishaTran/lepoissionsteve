@@ -37,3 +37,6 @@ Learning in dynamic, uncertain environments with obstacles and rewards — train
 ---
 
 This project demonstrates how reinforcement learning methods can be applied to classic games, offering insights into AI decision-making in complex, changing environments.
+
+## HOW TO RUN THE CODE 
+JUST RUN THE TRAIN.PY
